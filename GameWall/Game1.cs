@@ -134,10 +134,10 @@ namespace JumpingKitten
                 Exit();
 
             kitten.Update();
-            camera.Update();
-            State.Update(keyboardState);
+            camera.Update();           
             Wall.Update(keyboardState);
             Buff.Update(gameTime);
+            State.Update(keyboardState);
         }
 
         protected override void Draw(GameTime gameTime)
