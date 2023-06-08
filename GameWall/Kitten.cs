@@ -1,8 +1,6 @@
-﻿
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Windows.Forms;
 using static JumpingKitten.Game1;
 using Keys = Microsoft.Xna.Framework.Input.Keys;
 

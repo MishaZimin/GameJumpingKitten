@@ -1,10 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SharpDX.Direct2D1;
-using System;
 using System.Collections.Generic;
 using static JumpingKitten.Game1;
-using static JumpingKitten.Kitten;
 
 namespace JumpingKitten
 {
