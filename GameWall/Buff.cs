@@ -15,17 +15,6 @@ namespace JumpingKitten
         public static float Duration;
         public static float Timer;
 
-        //public Buff(Vector2 position, Texture2D texture)
-        //{
-        //    this.position = position;
-        //    this.texture = texture;
-        //}
-
-        //public void DrawObject(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
-        //{
-        //    spriteBatch.Draw(texture, position, Color.White);
-        //}
-
         public enum BuffType
         {
             Save,
