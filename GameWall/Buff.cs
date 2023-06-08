@@ -69,9 +69,9 @@ namespace JumpingKitten
 
         public static void AddNewBuffs()
         {
-            AddNewBuff(BuffLowSpeed.buffsLowSpeed, buffLowSpeedTexture, 10);
-            AddNewBuff(BuffSave.buffsSave, buffSaveTexture, 20);
-            AddNewBuff(BuffSpeed.buffsSpeed, buffSpeedTexture, 5);
+            AddNewBuff(BuffLowSpeed.buffsLowSpeed, buffLowSpeedTexture, 2);
+            AddNewBuff(BuffSave.buffsSave, buffSaveTexture, 2);
+            AddNewBuff(BuffSpeed.buffsSpeed, buffSpeedTexture, 2);
         }
     }
 }

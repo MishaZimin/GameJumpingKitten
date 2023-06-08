@@ -68,7 +68,7 @@ namespace JumpingKitten
         {
             spriteBatch.Begin();
             spriteBatch.Draw(backgroundMenu.texture, Vector2.Zero, Color.White);
-            spriteBatch.Draw(playButton, new Vector2(550, 150), Color.White);
+            spriteBatch.Draw(playButton, new Vector2(550 + 220, 150 + 450), Color.White);
             spriteBatch.End();
         }
 
@@ -109,7 +109,7 @@ namespace JumpingKitten
 
         public static void DrawGameplay()
         {
-            // Отрисовка игрs, счета  
+            // Отрисовка игрs, счетаб баффов  
             spriteBatch.Begin();
             spriteBatch.Draw(backgroundGame.texture, Vector2.Zero, Color.White);
             spriteBatch.End();
@@ -120,38 +120,33 @@ namespace JumpingKitten
 
             DrawWalls(spriteBatch, Walls);
 
-            DrawBuff(spriteBatch, BuffSpeed.buffsSpeed);
-            DrawBuff(spriteBatch, BuffLowSpeed.buffsLowSpeed);
-            DrawBuff(spriteBatch, BuffSave.buffsSave);
+            DrawBuff(spriteBatch, buffsSpeed);
+            DrawBuff(spriteBatch, buffsLowSpeed);
+            DrawBuff(spriteBatch, buffsSave);
 
             kitten.Draw(spriteBatch);
-
-            //camera.Draw(spriteBatch);
 
             spriteBatch.End();
 
             spriteBatch.Begin();
 
-            spriteBatch.DrawString(scoreFont, "Score: " + kitten.score, new Vector2(50, 700), Color.White);
-            spriteBatch.DrawString(scoreFont, "Best score: " + kitten.bestScore, new Vector2(50, 750), Color.White);
-
-            //spriteBatch.Draw(playButton, new Vector2(1280, 680), Color.White);
+            spriteBatch.DrawString(scoreFont, "Score: " + kitten.score, new Vector2(50, backgroundGame.texture.Height - 300), Color.White);
+            spriteBatch.DrawString(scoreFont, "Best score: " + kitten.bestScore, new Vector2(50, backgroundGame.texture.Height - 250), Color.White);
 
             if (BuffSave.Timer != 0)
             {
-                spriteBatch.Draw(buffSaveTexture, new Vector2(1300 + 20, 700), Color.White);
-                spriteBatch.DrawString(scoreFont, "" + (BuffSave.Duration - (int)BuffSave.Timer) + " sec", new Vector2(1350 + 20, 700), Color.White);
+                spriteBatch.Draw(buffSaveTexture, new Vector2(1750, 950), Color.White);
+                spriteBatch.DrawString(scoreFont, "" + (BuffSave.Duration - (int)BuffSave.Timer) + " sec", new Vector2(1800, 950), Color.White);
             }
             if (BuffLowSpeed.Timer != 0)
             {
-                spriteBatch.Draw(buffLowSpeedTexture, new Vector2(1305 + 20, 750), Color.White);
-                spriteBatch.DrawString(scoreFont, "" + (BuffLowSpeed.Duration - (int)BuffLowSpeed.Timer) + " sec", new Vector2(1350 + 20, 750), Color.White);
+                spriteBatch.Draw(buffLowSpeedTexture, new Vector2(1755, 1000), Color.White);
+                spriteBatch.DrawString(scoreFont, "" + (BuffLowSpeed.Duration - (int)BuffLowSpeed.Timer) + " sec", new Vector2(1800, 1000), Color.White);
             }
             if (BuffSpeed.Timer != 0)
             {
-                spriteBatch.Draw(buffSpeedTexture, new Vector2(1305 + 20, 650), Color.White);
-                //spriteBatch.DrawString(scoreFont, "" + kitten.speed, new Vector2(1350 + 20, 600), Color.White);
-                spriteBatch.DrawString(scoreFont, "" + (BuffSpeed.Duration - (int)BuffSpeed.Timer) + " sec", new Vector2(1350 + 20, 650), Color.White);
+                spriteBatch.Draw(buffSpeedTexture, new Vector2(1755, 900), Color.White);
+                spriteBatch.DrawString(scoreFont, "" + (BuffSpeed.Duration - (int)BuffSpeed.Timer) + " sec", new Vector2(1800, 900), Color.White);
             }
 
             spriteBatch.End();
@@ -162,11 +157,11 @@ namespace JumpingKitten
             // Отрисовка результатов, кнопок
             spriteBatch.Begin();
             spriteBatch.Draw(backgroundEndGame.texture, Vector2.Zero, Color.White);
-            spriteBatch.Draw(gameOverButton, new Vector2(450, 100), Color.White);
-            spriteBatch.Draw(scoreButton, new Vector2(450 - 30, 300), Color.White);
+            spriteBatch.Draw(gameOverButton, new Vector2(685, 200), Color.White);
+            spriteBatch.Draw(scoreButton, new Vector2(650, 400), Color.White);
 
-            spriteBatch.DrawString(scoreFont, "" + kitten.score, new Vector2(450 - 30 + 300, 450), Color.White);
-            spriteBatch.DrawString(scoreFont, "" + kitten.bestScore, new Vector2(450 - 30 + 300, 650), Color.White);
+            spriteBatch.DrawString(scoreFont, "" + kitten.score, new Vector2(950, 550), Color.White);
+            spriteBatch.DrawString(scoreFont, "" + kitten.bestScore, new Vector2(950, 750), Color.White);
             spriteBatch.End();
         }
 
@@ -178,7 +173,7 @@ namespace JumpingKitten
             buffsSpeed.Clear();
             buffsSave.Clear();
 
-            kitten.position = new Vector2(700 + 27, 500);          
+            kitten.position = new Vector2(900 + 27, 600);          
             kitten.texture = kittenTextureUpRight;
             kitten.speed = 5f;
             kitten.score = 0;

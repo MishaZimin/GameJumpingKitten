@@ -60,9 +60,9 @@ namespace JumpingKitten
 
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = 1500;
-            graphics.PreferredBackBufferHeight = 840;
-
+            graphics.PreferredBackBufferWidth = 1920;
+            graphics.PreferredBackBufferHeight = 1080;
+            graphics.IsFullScreen = true;
             graphics.ApplyChanges();
 
             base.Initialize();
@@ -73,10 +73,10 @@ namespace JumpingKitten
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //текстуры фона
-            backgroundGame.texture = Content.Load<Texture2D>("treeBackground5");
-            backgroundEndGame.texture = Content.Load<Texture2D>("treeBackground5");
-            backgroundMenu.texture = Content.Load<Texture2D>("treeBackground5");
-            backgroundPause.texture = Content.Load<Texture2D>("treeBackground5");
+            backgroundGame.texture = Content.Load<Texture2D>("treeBackground6");
+            backgroundEndGame.texture = Content.Load<Texture2D>("treeBackground6");
+            backgroundMenu.texture = Content.Load<Texture2D>("treeBackground6");
+            backgroundPause.texture = Content.Load<Texture2D>("treeBackground6");
 
             //текстуры кнопок
             playButton = Content.Load<Texture2D>("playButton4");
@@ -115,9 +115,9 @@ namespace JumpingKitten
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Play(backgroundMusic);
 
-            graphics.IsFullScreen = false;
+            
 
-            kitten = new Kitten(new(700 + 27, 500f), kittenTextureUpRight, 5f);
+            kitten = new Kitten(new(900 + 27, 600f), kittenTextureUpRight, 5f);
             camera = new Camera(new(0, 0), cameraTexture);
 
             //генерация стен

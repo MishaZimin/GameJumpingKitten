@@ -23,7 +23,7 @@ namespace JumpingKitten
 
             public void UpdateMatrix()
             {
-                TransformMatrix = Matrix.CreateTranslation(new Vector3(-position.X + 700, -position.Y + 500, 0));
+                TransformMatrix = Matrix.CreateTranslation(new Vector3(-position.X + 900, -position.Y + 600, 0));
             }
 
             public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)

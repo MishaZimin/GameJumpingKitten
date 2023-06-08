@@ -157,7 +157,7 @@ namespace JumpingKitten
 
         public static void GenerationWalls()
         {
-            Walls.Add(new Wall(new Vector2(700, 500), wallTexture, 0, new Spike(new Vector2(-140, 4000), BigSpikeLeftTexture, 0)));
+            Walls.Add(new Wall(new Vector2(900, 600), wallTexture, 0, new Spike(new Vector2(-140, 4000), BigSpikeLeftTexture, 0)));
 
             for (int i = 1; i < 10; i++)
             {
