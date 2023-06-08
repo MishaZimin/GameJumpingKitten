@@ -11,6 +11,7 @@ namespace JumpingKitten
     public class Kitten : Sprite
     {
         public Rectangle Rectangle = new(0, 0, 60, 60);
+
         public int score = 0;
         public int bestScore = 0;
         public bool ScoreFlag = true;
@@ -44,7 +45,6 @@ namespace JumpingKitten
         public bool gameOver;
 
         public static Kitten kitten;
-        //public static Kitten kitten = new(new(700 + 27, 500f), Game1.kittenTextureUpRight, 5f);
 
         public Kitten(Vector2 position, Texture2D texture, float speed)
         : base(texture, position, speed)
@@ -237,64 +237,4 @@ namespace JumpingKitten
         }
     }
 }
-
-//using Microsoft.Xna.Framework;
-//using Microsoft.Xna.Framework.Graphics;
-
-//namespace GameWall
-//{
-//    class Kitten
-//    {
-//        public Texture2D texture;
-//        public Vector2 position = new(10f, 10f);
-//        public Rectangle Rectangle = new(0, 0, 60, 60);
-//        //public Point kittenSize;
-//        public Kitten(Vector2 position, Texture2D texture)
-//        {
-//            this.position = position;
-//            this.texture = texture;
-//        }
-
-//        public void DrawKitten(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
-//        {
-//            spriteBatch.Draw(texture, position, Color.White);
-//        }
-
-//        public float speed = 5f;
-//        public float jumpForce = 10f;
-//        public float gravity = 0.3f;
-//        public float totalJumpTime = 0.5f;
-
-//        public bool jumping = false;
-//        public bool isJumping = false;
-//        public bool isGrounded = true;
-
-//        public float direction;
-//        public float jumpTime;
-//        public float startJumpHeight;
-//        public float endJumpHeight;
-//        public float jumpHeight;
-//        public float jumpPeakTime;
-//        public float jumpPeakHeight;
-
-//        public void Jump()
-//        {
-//            if (!jumping && isGrounded)
-//            {
-//                jumping = true;
-//                isGrounded = false;
-//                startJumpHeight = position.Y;
-//                endJumpHeight = startJumpHeight - jumpHeight;
-//                jumpPeakHeight = startJumpHeight - (jumpHeight / 2);
-//                jumpPeakTime = totalJumpTime / 2;
-//                jumpTime = 0;
-//            }
-
-//        }
-
-//    }
-//}
-
-
-
 
