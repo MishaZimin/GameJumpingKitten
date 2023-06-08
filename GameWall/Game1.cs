@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Media;
 using System;
 using static JumpingKitten.Wall;
-using static JumpingKitten.State;
 using static JumpingKitten.Kitten;
 
 namespace JumpingKitten
