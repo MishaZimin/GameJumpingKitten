@@ -10,7 +10,7 @@ using static JumpingKitten.Kitten;
 
 namespace JumpingKitten
 {
-    public class State
+    public class State : Game
     {
         public static GameState state = GameState.Menu;
 
@@ -18,8 +18,7 @@ namespace JumpingKitten
         {
             Menu,
             Gameplay,
-            EndOfGame,
-            Pause
+            EndOfGame
         }
 
         public static void Update(KeyboardState keyboardState)
@@ -31,9 +30,6 @@ namespace JumpingKitten
                     break;
                 case GameState.Gameplay:
                     UpdateGameplay(keyboardState);
-                    break;
-                case GameState.Pause:
-                    UpdatePause(keyboardState);
                     break;
                 case GameState.EndOfGame:
                     UpdateEndOfGame(keyboardState);
@@ -49,9 +45,6 @@ namespace JumpingKitten
                     break;
                 case GameState.Gameplay:
                     DrawGameplay();
-                    break;
-                case GameState.Pause:
-                    DrawPause();
                     break;
                 case GameState.EndOfGame:
                     DrawGameOver();
@@ -79,15 +72,6 @@ namespace JumpingKitten
                 state = GameState.EndOfGame;
                 kitten.gameOver = false;
             }
-
-            if (keyboardState.IsKeyDown(Keys.RightShift))
-                state = GameState.Pause;
-        }
-
-        public static void UpdatePause(KeyboardState keyboardState)
-        {
-            if (keyboardState.IsKeyDown(Keys.Enter))
-                state = GameState.Gameplay;
         }
 
         public static void UpdateEndOfGame(KeyboardState keyboardState)
@@ -97,14 +81,6 @@ namespace JumpingKitten
                 ResetLevel();
                 state = GameState.Gameplay;
             }
-        }
-
-        public static void DrawPause()
-        {
-            spriteBatch.Begin();
-            spriteBatch.Draw(backgroundPause.texture, Vector2.Zero, Color.White);
-            spriteBatch.DrawString(scoreFont, "Best score: " + kitten.bestScore, new Vector2(1070, 110F), Color.White);
-            spriteBatch.End();
         }
 
         public static void DrawGameplay()
