@@ -178,7 +178,7 @@ namespace JumpingKitten
 
                 StartJump();
 
-                jumpForce = 4f; // начальная скорость прыжка
+                jumpForce = 4f;
                 direction = 10f;
             }
 
@@ -200,7 +200,7 @@ namespace JumpingKitten
 
                 StartJump();
 
-                jumpForce = 4f; // начальная скорость прыжка
+                jumpForce = 4f;
                 direction = -10f;
             }
         }
