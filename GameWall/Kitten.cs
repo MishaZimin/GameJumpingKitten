@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using static JumpingKitten.Game1;
-using Keys = Microsoft.Xna.Framework.Input.Keys;
 
 namespace JumpingKitten
 {
@@ -157,11 +156,12 @@ namespace JumpingKitten
             }
         }
 
-        public void Jump(KeyboardState keyboardState)
+        public void Jump(KeyboardState keyboardState, Wall wall)
         {
             if (keyboardState.IsKeyDown(Keys.Right) &&
-                           (LeftJump == true || isWall == true))
+               (LeftJump == true || isWall == true))
             {
+                texture = kittenTextureStaticRight;
                 if (isWall == true)
                 {
                     RightJump = true;
@@ -172,8 +172,6 @@ namespace JumpingKitten
                     LeftJump = false;
                 }
 
-                texture = kittenTextureStaticRight;
-
                 StartJump();
 
                 jumpForce = 4f;
@@ -183,6 +181,7 @@ namespace JumpingKitten
             if (keyboardState.IsKeyDown(Keys.Left) &&
                (RightJump == true || isWall == true)) //прыжок влево
             {
+                texture = kittenTextureStaticLeft;
 
                 if (isWall == true)
                 {
@@ -193,8 +192,6 @@ namespace JumpingKitten
                 {
                     RightJump = false;
                 }
-
-                texture = kittenTextureStaticLeft;
 
                 StartJump();
 
@@ -209,7 +206,6 @@ namespace JumpingKitten
             {
                 if (BuffSave.Timer != 0)
                 {
-                    //BuffSave.Flag = false;
                     BuffSave.Timer = 0f;
                     wall.spike.position.X = 10000;
                     BuffSave.Timer = BuffSave.Duration;
@@ -221,7 +217,7 @@ namespace JumpingKitten
             }
         }
 
-        public void UpdateScore()
+        public static void UpdateScore()
         {
             if (kitten.score <= (int)camera.position.Y * -1 / 100 + 5)
             {

@@ -5,14 +5,9 @@ namespace JumpingKitten
 {
     public class Spike : Sprite
     {
-        public float speed = 1f; // 2
-
         public Spike(Vector2 position, Texture2D texture, float speed)
-            : base(texture, position, speed)
+        : base(texture, position, speed)
         {
-            this.position = position;
-            this.texture = texture;
-            this.speed = speed;
         }
 
         public void GoSpikeDownAndUp(Wall wall)

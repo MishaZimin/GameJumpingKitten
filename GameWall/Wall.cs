@@ -40,7 +40,7 @@ namespace JumpingKitten
                 //передвижение, повороты и прыжки на стене
                 kitten.MovesOnWall(keyboardState, wall);
 
-                kitten.Jump(keyboardState);
+                kitten.Jump(keyboardState, wall);
 
                 // движение шипов
                 wall.spike.GoSpikeDownAndUp(wall);              

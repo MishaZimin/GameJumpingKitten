@@ -15,7 +15,7 @@ namespace JumpingKitten
         public static List<Buff> buffsSave = new();
 
         public BuffSave(Texture2D texture, Vector2 position, float speed)
-            : base(texture, position, speed)
+        : base(texture, position, speed)
         {
         }
 
