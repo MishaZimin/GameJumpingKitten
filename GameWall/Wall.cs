@@ -37,13 +37,13 @@ namespace JumpingKitten
                 // касание шипов
                 kitten.TouchSpike(wall);
 
-                // движение шипов
-                wall.spike.GoSpikeDownAndUp(wall);
-
                 //передвижение, повороты и прыжки на стене
                 kitten.MovesOnWall(keyboardState, wall);
 
                 kitten.Jump(keyboardState);
+
+                // движение шипов
+                wall.spike.GoSpikeDownAndUp(wall);              
 
                 //зацепиться за стену
                 CollisionWithWall(wall);
