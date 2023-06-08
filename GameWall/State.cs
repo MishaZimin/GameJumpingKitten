@@ -12,6 +12,8 @@ namespace JumpingKitten
 {
     public class State
     {
+        public static GameState state = GameState.Menu;
+
         public enum GameState
         {
             Menu,

@@ -52,8 +52,6 @@ namespace JumpingKitten
 
         private Song backgroundMusic;
 
-        public static GameState state = GameState.Menu;
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
